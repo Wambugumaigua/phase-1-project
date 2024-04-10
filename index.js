@@ -9,12 +9,9 @@ async function fetchCompetitions() {
       console.error('Error fetching competitions:', error);
     }
   }
-  
-  
   function displayCompetitions(competitions) {
     const competitionsList = document.getElementById('competitions-list');
     competitionsList.innerHTML = '';
-  
     competitions.forEach(competition => {
       const competitionElement = document.createElement('div');
       competitionElement.innerHTML = `
@@ -29,12 +26,9 @@ async function fetchCompetitions() {
       competitionsList.appendChild(competitionElement);
     });
   }
-  
-  
   function handleSearch() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     const competitionElements = document.querySelectorAll('#competitions-list > div');
-  
     competitionElements.forEach(competitionElement => {
       const competitionName = competitionElement.querySelector('h2').textContent.toLowerCase();
       if (competitionName.includes(searchTerm)) {
@@ -44,15 +38,11 @@ async function fetchCompetitions() {
       }
     });
   }
-  
-  
+  const searchButton = document.getElementById('search-button');
+  searchButton.addEventListener('click', handleSearch);
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
   }
-  
-  
   document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
   document.getElementById('search-input').addEventListener('input', handleSearch);
-  window.addEventListener('load', fetchCompetitions); 
-
-};
+  window.addEventListener('load', fetchCompetitions);
