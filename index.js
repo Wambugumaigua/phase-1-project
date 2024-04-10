@@ -1,4 +1,3 @@
-/ Function to fetch and display competitions
 async function fetchCompetitions() {
     try {
       const proxyUrl = 'http://localhost:8080/';
@@ -26,3 +25,34 @@ async function fetchCompetitions() {
         <p><strong>Type:</strong> ${competition.type}</p>
         <p><strong>Plan:</strong> ${competition.plan}</p>
         <p><strong>Last Updated:</strong> ${competition.lastUpdated}</p>
+      `;
+      competitionsList.appendChild(competitionElement);
+    });
+  }
+  
+  
+  function handleSearch() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const competitionElements = document.querySelectorAll('#competitions-list > div');
+  
+    competitionElements.forEach(competitionElement => {
+      const competitionName = competitionElement.querySelector('h2').textContent.toLowerCase();
+      if (competitionName.includes(searchTerm)) {
+        competitionElement.style.display = 'block';
+      } else {
+        competitionElement.style.display = 'none';
+      }
+    });
+  }
+  
+  
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+  
+  
+  document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+  document.getElementById('search-input').addEventListener('input', handleSearch);
+  window.addEventListener('load', fetchCompetitions); 
+
+};
