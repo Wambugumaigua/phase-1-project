@@ -11,3 +11,18 @@ async function fetchCompetitions() {
     }
   }
   
+  
+  function displayCompetitions(competitions) {
+    const competitionsList = document.getElementById('competitions-list');
+    competitionsList.innerHTML = '';
+  
+    competitions.forEach(competition => {
+      const competitionElement = document.createElement('div');
+      competitionElement.innerHTML = `
+        <h2>${competition.name}</h2>
+        <p><strong>Area:</strong> ${competition.area.name}</p>
+        <p><strong>ID:</strong> ${competition.id}</p>
+        <p><strong>Code:</strong> ${competition.code}</p>
+        <p><strong>Type:</strong> ${competition.type}</p>
+        <p><strong>Plan:</strong> ${competition.plan}</p>
+        <p><strong>Last Updated:</strong> ${competition.lastUpdated}</p>

@@ -6,7 +6,7 @@
 #### By Maigua Alex Wambugu
 
 ## Description
-This project is a web application that will allow users to search and know more about football leagues. 
+This project is a web application that will allow users to search and know more about football leagues and competitions. 
 
 ## Installation
 Use git clone to be able to download the files from my github repository using the link provided below.(Installation Instructions)
