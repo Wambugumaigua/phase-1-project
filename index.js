@@ -1,7 +1,7 @@
 async function fetchCompetitions() {
     try {
       const proxyUrl = 'http://localhost:8080/';
-      const apiUrl = 'http://api.football-data.org/v4/competitions/';
+      const apiUrl = 'http://api.football-data.org/v2/competitions/=${searchInput}';
       const response = await fetch(proxyUrl + apiUrl);
       const data = await response.json();
       displayCompetitions(data.competitions);
