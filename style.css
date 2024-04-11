@@ -18,5 +18,17 @@
     border: 1px solid grey;
     border-radius: 5px;
     margin-bottom: 10px;
-    width: 300px; /* Adjust width as needed */
+    width: 300px; 
   }
+  body{
+    background-color: greenyellow;
+    text-align: centre;
+  }
+  h{
+    text-align: center;
+    color:darkred;
+  }
+  p{
+    color: blue;
+  }
+  
